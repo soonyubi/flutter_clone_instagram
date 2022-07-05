@@ -3,6 +3,7 @@ import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_clone_instagram/src/components/avatar_widget.dart';
 import 'package:flutter_clone_instagram/src/components/image_data.dart';
+import 'package:flutter_clone_instagram/src/components/post_widget.dart';
 
 class Home extends StatelessWidget {
   const Home({Key? key}) : super(key: key);
@@ -60,7 +61,9 @@ class Home extends StatelessWidget {
   }
 
   Widget _postList() {
-    return Container();
+    return Column(
+      children: List.generate(50, (index) => PostWidget()),
+    );
   }
 
   @override
@@ -88,7 +91,7 @@ class Home extends StatelessWidget {
       body: ListView(
         children: [
           _storyBoardList(),
-          //_postList(),
+          _postList(),
         ],
       ),
     );
